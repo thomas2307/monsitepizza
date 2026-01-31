@@ -189,14 +189,23 @@
         tarte: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Tarte_flamb%C3%A9e_originale.jpg/1000px-Tarte_flamb%C3%A9e_originale.jpg"
     };
 
+    /* --- TRADUCTIONS CORRIGÉES --- */
     const translations = {
         en: {
-            ui_title: "Pizza & Flams Party Planner", btn_add_row: "Add Recipe Row", ui_total_list: "Total Shopping List",
+            ui_title: "Pizza & Flammkuchen Planner", btn_add_row: "Add Recipe Row", ui_total_list: "Total Shopping List",
             ui_col_ingredient: "Ingredient", ui_col_quantity: "Total Qty", btn_print: "Print List 🖨️",
-            type_pizza: "🍕 Italian Pizza", type_tarte: "🔥 Flammkuchen",
+            type_pizza: "🍕 Italian Pizza", type_tarte: "🔥 Alsatian Flammkuchen",
             aff_title: "Restaurant Quality?", aff_text: "You need 500°C heat for perfect crusts.", aff_btn: "Check Pizza Ovens >",
-            var_margherita: "Margherita", var_reine: "Ham & Mushroom", var_pepperoni: "Pepperoni", var_4cheese: "4 Cheeses",
-            var_tradition: "Traditional (Bacon)", var_gratinee: "Gratinée (with Cheese)", var_forestiere: "Forestière (Mushrooms)", var_munster: "Munster Cheese",
+            // Variants
+            var_margherita: "Margherita", 
+            var_reine: "Ham & Mushrooms (Regina)", 
+            var_pepperoni: "Pepperoni", 
+            var_fourcheese: "Four Cheeses",
+            var_tradition: "Traditional (Bacon/Onion)", 
+            var_gratinee: "Au Gratin (with Cheese)", 
+            var_forestiere: "Mushroom & Bacon", 
+            var_munster: "Munster Cheese",
+            // Ingredients
             ing_flour: "Flour (Type 00)", ing_water: "Water", ing_salt: "Salt", ing_yeast: "Fresh Yeast", ing_oil: "Oil",
             ing_sauce_tomato: "Tomato Sauce", ing_mozzarella: "Mozzarella", ing_basil: "Basil", ing_ham: "Cooked Ham",
             ing_mushrooms: "Mushrooms", ing_pepperoni: "Pepperoni", ing_gorgonzola: "Gorgonzola", ing_goat: "Goat Cheese", ing_parmesan: "Parmesan",
@@ -207,10 +216,18 @@
         fr: {
             ui_title: "Planificateur Soirée Pizza & Flam's", btn_add_row: "Ajouter une ligne", ui_total_list: "Liste de Courses Totale",
             ui_col_ingredient: "Ingrédient", ui_col_quantity: "Qté Totale", btn_print: "Imprimer la liste 🖨️",
-            type_pizza: "🍕 Pizza Italienne", type_tarte: "🔥 Tarte Flambée",
+            type_pizza: "🍕 Pizza Italienne", type_tarte: "🔥 Tarte Flambée (Alsace)",
             aff_title: "Cuisson Pro à la Maison ?", aff_text: "Le four domestique ne chauffe pas assez (max 250°C). Il faut 500°C.", aff_btn: "Voir les Fours à Pizza >",
-            var_margherita: "Margherita", var_reine: "Reine (Jambon/Champis)", var_pepperoni: "Pepperoni", var_4cheese: "4 Fromages",
-            var_tradition: "Traditionnelle (Lardons)", var_gratinee: "Gratinée (Emmental)", var_forestiere: "Forestière (Champignons)", var_munster: "Au Munster",
+            // Variantes
+            var_margherita: "Margherita", 
+            var_reine: "Reine (Jambon/Champis)", 
+            var_pepperoni: "Pepperoni", 
+            var_fourcheese: "4 Fromages",
+            var_tradition: "Traditionnelle (Lardons)", 
+            var_gratinee: "Gratinée (Emmental)", 
+            var_forestiere: "Forestière (Champignons)", 
+            var_munster: "Au Munster",
+            // Ingrédients
             ing_flour: "Farine (T55/00)", ing_water: "Eau", ing_salt: "Sel", ing_yeast: "Levure Fraîche", ing_oil: "Huile",
             ing_sauce_tomato: "Sauce Tomate", ing_mozzarella: "Mozzarella", ing_basil: "Basilic", ing_ham: "Jambon Cuit",
             ing_mushrooms: "Champignons", ing_pepperoni: "Pepperoni", ing_gorgonzola: "Gorgonzola", ing_goat: "Chèvre", ing_parmesan: "Parmesan",
@@ -221,24 +238,40 @@
         de: {
             ui_title: "Pizza & Flammkuchen Planer", btn_add_row: "Zeile hinzufügen", ui_total_list: "Einkaufsliste",
             ui_col_ingredient: "Zutat", ui_col_quantity: "Menge", btn_print: "Liste Drucken 🖨️",
-            type_pizza: "🍕 Pizza", type_tarte: "🔥 Flammkuchen",
+            type_pizza: "🍕 Pizza", type_tarte: "🔥 Elsässer Flammkuchen",
             aff_title: "Wie beim Italiener?", aff_text: "Normale Öfen sind zu kalt. Sie brauchen 500°C.", aff_btn: "Pizzaöfen ansehen >",
-            var_margherita: "Margherita", var_reine: "Schinken & Pilze", var_pepperoni: "Pepperoni", var_4cheese: "4 Käse",
-            var_tradition: "Elsässer Art (Speck)", var_gratinee: "Gratinée (mit Käse)", var_forestiere: "Forestière (Pilze)", var_munster: "Munster Käse",
+            // Variantes
+            var_margherita: "Margherita", 
+            var_reine: "Schinken & Pilze", 
+            var_pepperoni: "Pepperoni / Pikant", 
+            var_fourcheese: "Vier Käse",
+            var_tradition: "Traditionell (Speck/Zwiebel)", 
+            var_gratinee: "Gratiniert (mit Käse)", 
+            var_forestiere: "Mit Pilzen (Wald-Art)", 
+            var_munster: "Mit Münsterkäse",
+            // Ingrédients
             ing_flour: "Mehl (Type 00)", ing_water: "Wasser", ing_salt: "Salz", ing_yeast: "Frische Hefe", ing_oil: "Öl",
             ing_sauce_tomato: "Tomatensauce", ing_mozzarella: "Mozzarella", ing_basil: "Basilikum", ing_ham: "Gekochter Schinken",
             ing_mushrooms: "Champignons", ing_pepperoni: "Pepperoni", ing_gorgonzola: "Gorgonzola", ing_goat: "Ziegenkäse", ing_parmesan: "Parmesan",
             ing_creme_fraiche: "Crème Fraîche", ing_fromage_blanc: "Speisequark", ing_lardons: "Speckwürfel", ing_onions: "Zwiebeln",
-            ing_nutmeg: "Muskatnuss", ing_emmental: "Emmentaler", ing_munster: "Munsterkäse",
+            ing_nutmeg: "Muskatnuss", ing_emmental: "Emmentaler", ing_munster: "Münsterkäse",
             unit_g: "g", unit_ml: "ml", unit_some: "Blätter", unit_pinch: "Prise", unit_slices: "Scheiben"
         },
         it: {
             ui_title: "Pianificatore Pizza & Flammkuchen", btn_add_row: "Aggiungi riga", ui_total_list: "Lista della Spesa",
             ui_col_ingredient: "Ingrediente", ui_col_quantity: "Qtà Totale", btn_print: "Stampa Lista 🖨️",
-            type_pizza: "🍕 Pizza", type_tarte: "🔥 Tarte Flambée",
+            type_pizza: "🍕 Pizza", type_tarte: "🔥 Flammkuchen (Alsaziana)",
             aff_title: "Qualità Ristorante?", aff_text: "I forni domestici non bastano. Serve un forno da 500°C.", aff_btn: "Vedi Forni Pizza >",
-            var_margherita: "Margherita", var_reine: "Prosciutto e Funghi", var_pepperoni: "Diavola (Salame)", var_4cheese: "4 Formaggi",
-            var_tradition: "Tradizionale (Pancetta)", var_gratinee: "Gratinée (Formaggio)", var_forestiere: "Forestière (Funghi)", var_munster: "Al Munster",
+            // Variantes
+            var_margherita: "Margherita", 
+            var_reine: "Prosciutto e Funghi", 
+            var_pepperoni: "Diavola (Salame)", 
+            var_fourcheese: "Ai 4 Formaggi",
+            var_tradition: "Tradizionale (Pancetta)", 
+            var_gratinee: "Gratinata (al Formaggio)", 
+            var_forestiere: "Boscaiola (Funghi)", 
+            var_munster: "Al Munster",
+            // Ingrédients
             ing_flour: "Farina (00)", ing_water: "Acqua", ing_salt: "Sale", ing_yeast: "Lievito Fresco", ing_oil: "Olio",
             ing_sauce_tomato: "Passata", ing_mozzarella: "Mozzarella", ing_basil: "Basilico", ing_ham: "Prosciutto Cotto",
             ing_mushrooms: "Funghi", ing_pepperoni: "Salame Piccante", ing_gorgonzola: "Gorgonzola", ing_goat: "Caprino", ing_parmesan: "Parmigiano",
@@ -249,10 +282,18 @@
         es: {
             ui_title: "Planificador Fiesta Pizza", btn_add_row: "Añadir fila", ui_total_list: "Lista de Compras",
             ui_col_ingredient: "Ingrediente", ui_col_quantity: "Total", btn_print: "Imprimir Lista 🖨️",
-            type_pizza: "🍕 Pizza", type_tarte: "🔥 Tarte Flambée",
+            type_pizza: "🍕 Pizza", type_tarte: "🔥 Flammkuchen (Alsaciana)",
             aff_title: "¿Calidad Restaurante?", aff_text: "Necesitas 500°C. Descubre hornos especializados.", aff_btn: "Ver Hornos Pizza >",
-            var_margherita: "Margherita", var_reine: "Jamón y Champiñones", var_pepperoni: "Pepperoni", var_4cheese: "4 Quesos",
-            var_tradition: "Tradicional (Bacon)", var_gratinee: "Gratinée (Queso)", var_forestiere: "Forestière (Setas)", var_munster: "Queso Munster",
+            // Variantes
+            var_margherita: "Margherita", 
+            var_reine: "Jamón y Champiñones", 
+            var_pepperoni: "Pepperoni", 
+            var_fourcheese: "Cuatro Quesos",
+            var_tradition: "Tradicional (Bacon)", 
+            var_gratinee: "Gratinada (con Queso)", 
+            var_forestiere: "Con Setas y Bacon", 
+            var_munster: "Queso Munster",
+            // Ingrédients
             ing_flour: "Harina (Fuerza)", ing_water: "Agua", ing_salt: "Sal", ing_yeast: "Levadura Fresca", ing_oil: "Aceite",
             ing_sauce_tomato: "Tomate", ing_mozzarella: "Mozzarella", ing_basil: "Albahaca", ing_ham: "Jamón Cocido",
             ing_mushrooms: "Champiñones", ing_pepperoni: "Pepperoni", ing_gorgonzola: "Gorgonzola", ing_goat: "Queso de Cabra", ing_parmesan: "Parmesano",
@@ -262,7 +303,7 @@
         }
     };
 
-    /* --- LOGIQUE RECETTES (Quantités Standardisées) --- */
+    /* --- LOGIQUE RECETTES --- */
     const recipeData = {
         pizza: {
             // Pâton standard 250g, Hydratation 63%
@@ -299,12 +340,11 @@
     let currentLang = 'fr';
 
     function createRowHTML(index, forcedType = null) {
-        // Logique par défaut : Lignes 0,1 -> Pizza. Lignes 2,3 -> Tarte.
         let defaultType = 'pizza';
         if (forcedType) {
             defaultType = forcedType;
         } else {
-            // Si on ajoute une ligne manuellement, on regarde la ligne précédente, sinon Pizza
+            // Lignes manuelles : Pizza si index >= 4
             if (index >= 4) defaultType = 'pizza'; 
             else defaultType = (index < 2) ? 'pizza' : 'tarte';
         }
@@ -462,20 +502,20 @@
 
     // --- INITIALISATION DES 4 LIGNES ---
     function init() {
-        // Ligne 0 : Pizza
+        // Ligne 0 : Pizza (4 par défaut)
         containerRows.insertAdjacentHTML('beforeend', createRowHTML(0, 'pizza'));
         updateRowType(document.getElementById('row-0').querySelector('.type-select'), 0);
-        document.getElementById('row-0').querySelector('.count-input').value = 4; // Valeur démo
+        document.getElementById('row-0').querySelector('.count-input').value = 4;
 
-        // Ligne 1 : Pizza
+        // Ligne 1 : Pizza (0 par défaut)
         containerRows.insertAdjacentHTML('beforeend', createRowHTML(1, 'pizza'));
         updateRowType(document.getElementById('row-1').querySelector('.type-select'), 1);
 
-        // Ligne 2 : Tarte
+        // Ligne 2 : Tarte (0 par défaut)
         containerRows.insertAdjacentHTML('beforeend', createRowHTML(2, 'tarte'));
         updateRowType(document.getElementById('row-2').querySelector('.type-select'), 2);
 
-        // Ligne 3 : Tarte
+        // Ligne 3 : Tarte (0 par défaut)
         containerRows.insertAdjacentHTML('beforeend', createRowHTML(3, 'tarte'));
         updateRowType(document.getElementById('row-3').querySelector('.type-select'), 3);
         
