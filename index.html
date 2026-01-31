@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Calculateur Soirée Pizza & Flam's - Liste de courses complète</title>
-    <meta name="description" content="Planifiez votre soirée Pizza et Tarte Flambée. Ajoutez plusieurs recettes, définissez les quantités et obtenez une liste de courses globale et précise.">
+    <title>Calculateur Soirée Pizza & Flam's</title>
+    <meta name="description" content="Planifiez votre soirée Pizza et Tarte Flambée. Liste de courses automatique et précise.">
     
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -18,7 +18,6 @@
             --accent-color: #C0392B;
             --secondary-color: #8D6E63;
             --card-bg: #FFFFFF;
-            --container-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
 
         body {
@@ -27,11 +26,8 @@
             color: var(--text-color);
             margin: 0;
             padding: 20px;
-            background-image: linear-gradient(rgba(250, 243, 224, 0.92), rgba(250, 243, 224, 0.92)), url('https://www.transparenttextures.com/patterns/cream-paper.png');
-            line-height: 1.6;
+            background-image: linear-gradient(rgba(250, 243, 224, 0.95), rgba(250, 243, 224, 0.95)), url('https://www.transparenttextures.com/patterns/cream-paper.png');
         }
-
-        h1, h2, h3 { font-family: 'Merriweather', serif; color: var(--text-color); }
 
         .container {
             max-width: 900px;
@@ -39,7 +35,7 @@
             background: var(--card-bg);
             padding: 40px;
             border-radius: 12px;
-            box-shadow: var(--container-shadow);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             border: 1px solid #EFEBE9;
         }
 
@@ -52,161 +48,81 @@
             padding-bottom: 20px;
         }
 
-        h1 { margin: 0; font-size: 1.6rem; letter-spacing: -0.5px; }
+        h1 { margin: 0; font-family: 'Merriweather', serif; color: var(--text-color); font-size: 1.5rem; }
 
-        .lang-select {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            background: #fff;
-            cursor: pointer;
-        }
+        .lang-select { padding: 8px; border-radius: 6px; border: 1px solid #ccc; cursor: pointer; }
 
         .ad-banner-top {
-            background-color: #f4f4f4;
-            border: 1px dashed #bbb;
-            text-align: center;
-            padding: 10px;
-            margin-bottom: 20px;
-            font-size: 0.8rem;
-            color: #888;
-            border-radius: 6px;
+            background-color: #f4f4f4; border: 1px dashed #bbb; text-align: center;
+            padding: 10px; margin-bottom: 20px; font-size: 0.8rem; color: #888; border-radius: 6px;
         }
 
         #main-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: opacity 0.3s ease;
+            width: 100%; height: 220px; object-fit: cover; border-radius: 8px;
+            margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* --- Zone de commande (Lignes) --- */
-        #order-rows-container {
-            margin-bottom: 20px;
-        }
-
+        /* Lignes de commande */
         .recipe-row {
-            display: grid;
-            grid-template-columns: 1.5fr 2fr 1fr auto;
-            gap: 10px;
-            align-items: center;
-            background-color: #FDFBF7;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            border: 1px solid #EEE;
-            transition: background-color 0.2s;
+            display: grid; grid-template-columns: 1.5fr 2fr 1fr auto; gap: 10px;
+            align-items: center; background-color: #FDFBF7; padding: 15px;
+            margin-bottom: 10px; border-radius: 8px; border: 1px solid #EEE;
         }
-
-        .recipe-row:hover { background-color: #FFF; border-color: #DDD; }
-
-        .recipe-row label {
-            display: none; /* Caché visuellement, utile pour screen readers */
-        }
+        .recipe-row:hover { border-color: #DDD; background-color: #fff; }
 
         select, input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 0.95rem;
-            background: #fff;
+            width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;
+            font-size: 0.95rem; background: #fff; box-sizing: border-box;
         }
 
-        .btn-remove {
-            background: none; border: none; color: #999; cursor: pointer; font-size: 1.2rem;
-        }
+        .btn-remove { background: none; border: none; color: #999; cursor: pointer; font-size: 1.2rem; }
         .btn-remove:hover { color: var(--accent-color); }
 
-        .add-row-container {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
+        .add-row-container { text-align: center; margin-bottom: 30px; }
         .btn-add {
-            background-color: var(--secondary-color);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            background-color: var(--secondary-color); color: white; border: none;
+            padding: 10px 20px; border-radius: 50px; cursor: pointer; font-weight: bold;
         }
         .btn-add:hover { background-color: var(--accent-color); }
 
-        /* --- Résultats --- */
+        /* Résultats */
         .results-header {
-            text-align: center;
-            background: var(--text-color);
-            color: #fff;
-            padding: 10px;
-            border-radius: 8px 8px 0 0;
-            margin-top: 20px;
+            text-align: center; background: var(--text-color); color: #fff;
+            padding: 10px; border-radius: 8px 8px 0 0; margin-top: 20px;
         }
-        
         .results-container { 
-            border: 2px solid var(--text-color);
-            border-top: none;
-            border-radius: 0 0 8px 8px;
-            padding: 20px;
-            background-color: #fff;
+            border: 2px solid var(--text-color); border-top: none;
+            border-radius: 0 0 8px 8px; padding: 20px; background-color: #fff;
         }
 
         table { width: 100%; border-collapse: collapse; }
-        th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid #f0f0f0; }
-        th { color: #555; font-family: 'Merriweather', serif; font-size: 0.95rem; }
+        th, td { text-align: left; padding: 10px; border-bottom: 1px solid #f0f0f0; }
+        th { color: #555; font-family: 'Merriweather', serif; }
         td.amount-cell { font-weight: 700; color: var(--accent-color); text-align: right; }
-        tr.total-row td { border-top: 2px solid #333; font-weight: bold; font-size: 1.1rem; }
 
         .actions { text-align: center; margin: 30px 0; }
         .btn-print {
-            background-color: var(--accent-color);
-            color: #fff;
-            border: none; padding: 14px 30px; font-size: 1.1rem; border-radius: 50px;
-            cursor: pointer; font-weight: bold; box-shadow: 0 4px 10px rgba(192, 57, 43, 0.3);
+            background-color: var(--accent-color); color: #fff; border: none;
+            padding: 14px 30px; font-size: 1.1rem; border-radius: 50px; cursor: pointer;
         }
-        .btn-print:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(192, 57, 43, 0.4); }
 
         .affiliation-section {
-            margin-top: 40px; padding: 25px; background-color: #FFF8E1;
+            margin-top: 40px; padding: 20px; background-color: #FFF8E1;
             border: 2px dashed var(--secondary-color); border-radius: 12px;
             display: flex; align-items: center; gap: 20px;
         }
-        .aff-link {
-            color: var(--text-color); text-decoration: none; font-weight: bold; border-bottom: 2px solid var(--text-color);
-        }
+        .aff-link { color: var(--text-color); font-weight: bold; }
 
-        /* --- Responsive --- */
         @media (max-width: 600px) {
-            .container { padding: 15px; }
-            header { flex-direction: column; align-items: flex-start; }
-            .recipe-row { 
-                grid-template-columns: 1fr; /* Stack on mobile */
-                gap: 5px;
-                position: relative;
-            }
-            .btn-remove { 
-                position: absolute; top: 10px; right: 10px; 
-            }
+            .recipe-row { grid-template-columns: 1fr; position: relative; gap: 5px; }
+            .btn-remove { position: absolute; top: 10px; right: 10px; }
             .affiliation-section { flex-direction: column; text-align: center; }
         }
 
-        /* --- Print --- */
         @media print {
-            body { background: none; padding: 0; color: #000; }
-            .container { box-shadow: none; border: none; padding: 0; max-width: 100%; }
+            body { background: none; }
+            .container { box-shadow: none; border: none; padding: 0; }
             .ad-banner-top, .affiliation-section, .actions, .lang-select, .add-row-container, .btn-remove { display: none !important; }
-            #order-rows-container { border-bottom: 1px solid #000; padding-bottom: 20px; }
-            .recipe-row { border: none; padding: 5px 0; background: none; grid-template-columns: 1fr 1fr 1fr; }
-            .recipe-row select { border: none; appearance: none; font-weight: bold; padding: 0; }
-            .recipe-row input { border: none; text-align: left; padding: 0; }
-            .results-container { border: 1px solid #000; }
         }
     </style>
 </head>
@@ -240,17 +156,15 @@
     </div>
 
     <div class="results-header">
-        <h2 style="margin:0; color:white; font-size:1.2rem;" data-i18n="ui_total_list">Liste de Courses Totale</h2>
+        <h2 style="margin:0; font-size:1.2rem;" data-i18n="ui_total_list">Liste de Courses Totale</h2>
     </div>
     <div class="results-container">
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr><th data-i18n="ui_col_ingredient">Ingrédient</th><th data-i18n="ui_col_quantity" style="text-align: right;">Total</th></tr>
-                </thead>
-                <tbody id="shopping-list-tbody"></tbody>
-            </table>
-        </div>
+        <table>
+            <thead>
+                <tr><th data-i18n="ui_col_ingredient">Ingrédient</th><th data-i18n="ui_col_quantity" style="text-align: right;">Total</th></tr>
+            </thead>
+            <tbody id="shopping-list-tbody"></tbody>
+        </table>
     </div>
 
     <div class="actions">
@@ -261,30 +175,28 @@
         <div style="font-size: 2.5rem;">🔥</div>
         <div class="aff-content">
             <h4 data-i18n="aff_title">Cuisson Pro à la Maison ?</h4>
-            <p data-i18n="aff_text">Le secret d'une pâte croustillante est la température (500°C). Impossible avec un four standard.</p>
+            <p data-i18n="aff_text">Le secret d'une pâte croustillante est la température (500°C).</p>
             <a href="#" class="aff-link" target="_blank" data-i18n="aff_btn">Voir les Fours à Pizza (Ooni/Gozney) ></a>
         </div>
     </div>
 </div>
 
 <script>
-    /* --- CONFIG & DATA --- */
+    /* --- CONFIGURATION & DONNÉES --- */
 
-    // 2 Photos Uniques (Haute Qualité)
     const IMAGES = {
-        pizza: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1000&q=80", // Belle Pizza Napolitaine
-        tarte: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Tarte_flamb%C3%A9e_originale.jpg/1000px-Tarte_flamb%C3%A9e_originale.jpg" // Belle Tarte Flambée
+        pizza: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1000&q=80",
+        tarte: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Tarte_flamb%C3%A9e_originale.jpg/1000px-Tarte_flamb%C3%A9e_originale.jpg"
     };
 
     const translations = {
         en: {
             ui_title: "Pizza & Flams Party Planner", btn_add_row: "Add Recipe Row", ui_total_list: "Total Shopping List",
-            ui_col_ingredient: "Ingredient", ui_col_quantity: "Total Qty", btn_print: "Print Shopping List 🖨️",
-            type_pizza: "🍕 Italian Pizza", type_tarte: "🔥 Flammkuchen (Tarte)",
-            aff_title: "Want Restaurant Quality?", aff_text: "Standard ovens can't reach 500°C. You need a specialized oven.", aff_btn: "Check Pizza Ovens >",
-            var_margherita: "Margherita", var_reine: "Regina (Ham/Shrooms)", var_pepperoni: "Pepperoni", var_4cheese: "4 Cheeses",
-            var_tradition: "Traditional (Bacon)", var_gratinee: "Gratinée (Cheese)", var_forestiere: "Forestière (Shrooms)", var_munster: "Munster Cheese",
-            // Ingredients
+            ui_col_ingredient: "Ingredient", ui_col_quantity: "Total Qty", btn_print: "Print List 🖨️",
+            type_pizza: "🍕 Italian Pizza", type_tarte: "🔥 Flammkuchen",
+            aff_title: "Restaurant Quality?", aff_text: "You need 500°C heat for perfect crusts.", aff_btn: "Check Pizza Ovens >",
+            var_margherita: "Margherita", var_reine: "Ham & Mushroom", var_pepperoni: "Pepperoni", var_4cheese: "4 Cheeses",
+            var_tradition: "Traditional (Bacon)", var_gratinee: "Gratinée (with Cheese)", var_forestiere: "Forestière (Mushrooms)", var_munster: "Munster Cheese",
             ing_flour: "Flour (Type 00)", ing_water: "Water", ing_salt: "Salt", ing_yeast: "Fresh Yeast", ing_oil: "Oil",
             ing_sauce_tomato: "Tomato Sauce", ing_mozzarella: "Mozzarella", ing_basil: "Basil", ing_ham: "Cooked Ham",
             ing_mushrooms: "Mushrooms", ing_pepperoni: "Pepperoni", ing_gorgonzola: "Gorgonzola", ing_goat: "Goat Cheese", ing_parmesan: "Parmesan",
@@ -296,32 +208,65 @@
             ui_title: "Planificateur Soirée Pizza & Flam's", btn_add_row: "Ajouter une ligne", ui_total_list: "Liste de Courses Totale",
             ui_col_ingredient: "Ingrédient", ui_col_quantity: "Qté Totale", btn_print: "Imprimer la liste 🖨️",
             type_pizza: "🍕 Pizza Italienne", type_tarte: "🔥 Tarte Flambée",
-            aff_title: "Cuisson Pro à la Maison ?", aff_text: "Le four domestique ne chauffe pas assez. Il faut un four spécialisé.", aff_btn: "Voir les Fours à Pizza >",
+            aff_title: "Cuisson Pro à la Maison ?", aff_text: "Le four domestique ne chauffe pas assez (max 250°C). Il faut 500°C.", aff_btn: "Voir les Fours à Pizza >",
             var_margherita: "Margherita", var_reine: "Reine (Jambon/Champis)", var_pepperoni: "Pepperoni", var_4cheese: "4 Fromages",
             var_tradition: "Traditionnelle (Lardons)", var_gratinee: "Gratinée (Emmental)", var_forestiere: "Forestière (Champignons)", var_munster: "Au Munster",
-            // Ingrédients
             ing_flour: "Farine (T55/00)", ing_water: "Eau", ing_salt: "Sel", ing_yeast: "Levure Fraîche", ing_oil: "Huile",
             ing_sauce_tomato: "Sauce Tomate", ing_mozzarella: "Mozzarella", ing_basil: "Basilic", ing_ham: "Jambon Cuit",
             ing_mushrooms: "Champignons", ing_pepperoni: "Pepperoni", ing_gorgonzola: "Gorgonzola", ing_goat: "Chèvre", ing_parmesan: "Parmesan",
-            ing_creme_fraiche: "Crème Fraîche", ing_fromage_blanc: "Fromage Blanc", ing_lardons: "Lardons", ing_onions: "Oignons",
-            ing_nutmeg: "Muscade", ing_emmental: "Emmental", ing_munster: "Munster",
+            ing_creme_fraiche: "Crème Fraîche épaisse", ing_fromage_blanc: "Fromage Blanc", ing_lardons: "Lardons Fumés", ing_onions: "Oignons",
+            ing_nutmeg: "Muscade", ing_emmental: "Emmental râpé", ing_munster: "Munster",
             unit_g: "g", unit_ml: "ml", unit_some: "feuilles", unit_pinch: "pincée", unit_slices: "tranches"
         },
-        // (Autres langues simplifiées pour l'exemple, à compléter si besoin)
-        en: { ui_title: "Pizza Party Planner", btn_add_row: "Add Row", ui_total_list: "Total List", btn_print: "Print", type_pizza: "Pizza", type_tarte: "Flammkuchen" },
-        de: { ui_title: "Pizza & Flammkuchen Planer", btn_add_row: "Zeile hinzufügen", ui_total_list: "Einkaufsliste", btn_print: "Drucken", type_pizza: "Pizza", type_tarte: "Flammkuchen" },
-        it: { ui_title: "Pianificatore Pizza", btn_add_row: "Aggiungi riga", ui_total_list: "Lista Spesa", btn_print: "Stampa", type_pizza: "Pizza", type_tarte: "Tarte Flambée" },
-        es: { ui_title: "Planificador Pizza", btn_add_row: "Añadir fila", ui_total_list: "Lista de Compras", btn_print: "Imprimir", type_pizza: "Pizza", type_tarte: "Tarte Flambée" }
+        de: {
+            ui_title: "Pizza & Flammkuchen Planer", btn_add_row: "Zeile hinzufügen", ui_total_list: "Einkaufsliste",
+            ui_col_ingredient: "Zutat", ui_col_quantity: "Menge", btn_print: "Liste Drucken 🖨️",
+            type_pizza: "🍕 Pizza", type_tarte: "🔥 Flammkuchen",
+            aff_title: "Wie beim Italiener?", aff_text: "Normale Öfen sind zu kalt. Sie brauchen 500°C.", aff_btn: "Pizzaöfen ansehen >",
+            var_margherita: "Margherita", var_reine: "Schinken & Pilze", var_pepperoni: "Pepperoni", var_4cheese: "4 Käse",
+            var_tradition: "Elsässer Art (Speck)", var_gratinee: "Gratinée (mit Käse)", var_forestiere: "Forestière (Pilze)", var_munster: "Munster Käse",
+            ing_flour: "Mehl (Type 00)", ing_water: "Wasser", ing_salt: "Salz", ing_yeast: "Frische Hefe", ing_oil: "Öl",
+            ing_sauce_tomato: "Tomatensauce", ing_mozzarella: "Mozzarella", ing_basil: "Basilikum", ing_ham: "Gekochter Schinken",
+            ing_mushrooms: "Champignons", ing_pepperoni: "Pepperoni", ing_gorgonzola: "Gorgonzola", ing_goat: "Ziegenkäse", ing_parmesan: "Parmesan",
+            ing_creme_fraiche: "Crème Fraîche", ing_fromage_blanc: "Speisequark", ing_lardons: "Speckwürfel", ing_onions: "Zwiebeln",
+            ing_nutmeg: "Muskatnuss", ing_emmental: "Emmentaler", ing_munster: "Munsterkäse",
+            unit_g: "g", unit_ml: "ml", unit_some: "Blätter", unit_pinch: "Prise", unit_slices: "Scheiben"
+        },
+        it: {
+            ui_title: "Pianificatore Pizza & Flammkuchen", btn_add_row: "Aggiungi riga", ui_total_list: "Lista della Spesa",
+            ui_col_ingredient: "Ingrediente", ui_col_quantity: "Qtà Totale", btn_print: "Stampa Lista 🖨️",
+            type_pizza: "🍕 Pizza", type_tarte: "🔥 Tarte Flambée",
+            aff_title: "Qualità Ristorante?", aff_text: "I forni domestici non bastano. Serve un forno da 500°C.", aff_btn: "Vedi Forni Pizza >",
+            var_margherita: "Margherita", var_reine: "Prosciutto e Funghi", var_pepperoni: "Diavola (Salame)", var_4cheese: "4 Formaggi",
+            var_tradition: "Tradizionale (Pancetta)", var_gratinee: "Gratinée (Formaggio)", var_forestiere: "Forestière (Funghi)", var_munster: "Al Munster",
+            ing_flour: "Farina (00)", ing_water: "Acqua", ing_salt: "Sale", ing_yeast: "Lievito Fresco", ing_oil: "Olio",
+            ing_sauce_tomato: "Passata", ing_mozzarella: "Mozzarella", ing_basil: "Basilico", ing_ham: "Prosciutto Cotto",
+            ing_mushrooms: "Funghi", ing_pepperoni: "Salame Piccante", ing_gorgonzola: "Gorgonzola", ing_goat: "Caprino", ing_parmesan: "Parmigiano",
+            ing_creme_fraiche: "Panna Acida", ing_fromage_blanc: "Formaggio Fresco", ing_lardons: "Pancetta", ing_onions: "Cipolle",
+            ing_nutmeg: "Noce Moscata", ing_emmental: "Emmental", ing_munster: "Munster",
+            unit_g: "g", unit_ml: "ml", unit_some: "foglie", unit_pinch: "pizzico", unit_slices: "fette"
+        },
+        es: {
+            ui_title: "Planificador Fiesta Pizza", btn_add_row: "Añadir fila", ui_total_list: "Lista de Compras",
+            ui_col_ingredient: "Ingrediente", ui_col_quantity: "Total", btn_print: "Imprimir Lista 🖨️",
+            type_pizza: "🍕 Pizza", type_tarte: "🔥 Tarte Flambée",
+            aff_title: "¿Calidad Restaurante?", aff_text: "Necesitas 500°C. Descubre hornos especializados.", aff_btn: "Ver Hornos Pizza >",
+            var_margherita: "Margherita", var_reine: "Jamón y Champiñones", var_pepperoni: "Pepperoni", var_4cheese: "4 Quesos",
+            var_tradition: "Tradicional (Bacon)", var_gratinee: "Gratinée (Queso)", var_forestiere: "Forestière (Setas)", var_munster: "Queso Munster",
+            ing_flour: "Harina (Fuerza)", ing_water: "Agua", ing_salt: "Sal", ing_yeast: "Levadura Fresca", ing_oil: "Aceite",
+            ing_sauce_tomato: "Tomate", ing_mozzarella: "Mozzarella", ing_basil: "Albahaca", ing_ham: "Jamón Cocido",
+            ing_mushrooms: "Champiñones", ing_pepperoni: "Pepperoni", ing_gorgonzola: "Gorgonzola", ing_goat: "Queso de Cabra", ing_parmesan: "Parmesano",
+            ing_creme_fraiche: "Nata espesa", ing_fromage_blanc: "Queso Batido", ing_lardons: "Bacon", ing_onions: "Cebollas",
+            ing_nutmeg: "Nuez Moscada", ing_emmental: "Emmental", ing_munster: "Munster",
+            unit_g: "g", unit_ml: "ml", unit_some: "hojas", unit_pinch: "pizca", unit_slices: "lonchas"
+        }
     };
 
-    // Pour éviter d'avoir le code trop long, je fais un fallback anglais pour les autres langues sur les ingrédients
-    translations.de = {...translations.fr, ...translations.de}; 
-    translations.it = {...translations.fr, ...translations.it};
-    translations.es = {...translations.fr, ...translations.es};
-
+    /* --- LOGIQUE RECETTES (Quantités Standardisées) --- */
     const recipeData = {
         pizza: {
-            dough: { ing_flour: 150, ing_water: 95, ing_salt: 3, ing_yeast: 1 },
+            // Pâton standard 250g, Hydratation 63%
+            dough: { ing_flour: 150, ing_water: 95, ing_salt: 3, ing_yeast: 1 }, 
             variants: {
                 margherita: { toppings: { ing_sauce_tomato: 80, ing_mozzarella: 100, ing_basil: "unit_some" } },
                 reine: { toppings: { ing_sauce_tomato: 80, ing_mozzarella: 80, ing_ham: 50, ing_mushrooms: 40 } },
@@ -330,6 +275,7 @@
             }
         },
         tarte: {
+            // Pâte très fine (130g de pâte) + Appareil standard 100g (50/50)
             dough: { ing_flour: 120, ing_water: 60, ing_oil: 10, ing_salt: 2 },
             baseTopping: { ing_creme_fraiche: 50, ing_fromage_blanc: 50, ing_onions: 50, ing_nutmeg: "unit_pinch" },
             variants: {
@@ -341,23 +287,27 @@
         }
     };
 
-    // Pré-fusion tartes
+    // Fusion de la base Tarte avec les variantes
     for (const v in recipeData.tarte.variants) {
         recipeData.tarte.variants[v].toppings = { ...recipeData.tarte.baseTopping, ...recipeData.tarte.variants[v].toppings };
     }
 
-    /* --- DOM ELEMENTS --- */
+    /* --- JS LOGIC --- */
     const containerRows = document.getElementById('order-rows-container');
     const mainImage = document.getElementById('main-image');
     const langSelect = document.getElementById('language-select');
     let currentLang = 'fr';
 
-    /* --- FUNCTIONS --- */
-
-    function createRowHTML(index) {
-        // Build Select Options for Type
-        const isPizza = index < 2; // Par défaut: 2 premières lignes Pizza, suivantes Tarte (juste pour l'exemple)
-        const defaultType = isPizza ? 'pizza' : 'tarte';
+    function createRowHTML(index, forcedType = null) {
+        // Logique par défaut : Lignes 0,1 -> Pizza. Lignes 2,3 -> Tarte.
+        let defaultType = 'pizza';
+        if (forcedType) {
+            defaultType = forcedType;
+        } else {
+            // Si on ajoute une ligne manuellement, on regarde la ligne précédente, sinon Pizza
+            if (index >= 4) defaultType = 'pizza'; 
+            else defaultType = (index < 2) ? 'pizza' : 'tarte';
+        }
         
         return `
             <div class="recipe-row" id="row-${index}">
@@ -372,7 +322,7 @@
                         </select>
                 </div>
                 <div class="control-group">
-                    <input type="number" class="count-input" value="${index === 0 ? 4 : 0}" min="0" oninput="calculateTotal()" placeholder="0">
+                    <input type="number" class="count-input" value="0" min="0" oninput="calculateTotal()" placeholder="0">
                 </div>
                 <button class="btn-remove" onclick="removeRow(${index})" title="Supprimer">
                     <i class="fas fa-trash-alt"></i>
@@ -381,10 +331,9 @@
         `;
     }
 
-    function addNewRow() {
-        const index = new Date().getTime(); // Unique ID
-        containerRows.insertAdjacentHTML('beforeend', createRowHTML(index));
-        // Initialize the variant select for this new row
+    function addNewRow(forcedType = null) {
+        const index = new Date().getTime() + Math.floor(Math.random() * 1000);
+        containerRows.insertAdjacentHTML('beforeend', createRowHTML(index, forcedType));
         const newRow = document.getElementById(`row-${index}`);
         updateRowType(newRow.querySelector('.type-select'), index);
         calculateTotal();
@@ -392,9 +341,9 @@
 
     function removeRow(id) {
         const row = document.getElementById(`row-${id}`);
-        row.remove();
+        if(row) row.remove();
         calculateTotal();
-        updateMainImage(); // Update image in case the first row was removed
+        updateMainImage();
     }
 
     function updateRowType(selectElement, rowId) {
@@ -402,7 +351,6 @@
         const type = selectElement.value;
         const variantSelect = row.querySelector('.variant-select');
         
-        // Populate variants based on type
         variantSelect.innerHTML = '';
         const variants = recipeData[type].variants;
         for (const [key, val] of Object.entries(variants)) {
@@ -412,23 +360,19 @@
             opt.textContent = translations[currentLang][transKey] || key;
             variantSelect.appendChild(opt);
         }
-        
-        updateMainImage(); // Check if we need to change the top photo
+        updateMainImage();
     }
 
     function updateMainImage() {
-        // Find the FIRST row to decide the image
         const firstRow = document.querySelector('.recipe-row');
         if (firstRow) {
             const type = firstRow.querySelector('.type-select').value;
             mainImage.src = IMAGES[type];
-        } else {
-            mainImage.src = IMAGES['pizza']; // Default
         }
     }
 
     function calculateTotal() {
-        const totalIngredients = {}; // { ing_key: {amount: 100, unit: 'g'} }
+        const totalIngredients = {}; 
 
         document.querySelectorAll('.recipe-row').forEach(row => {
             const type = row.querySelector('.type-select').value;
@@ -436,11 +380,8 @@
             const count = parseInt(row.querySelector('.count-input').value) || 0;
 
             if (count > 0) {
-                // 1. Dough
                 const dough = recipeData[type].dough;
                 addToTotal(totalIngredients, dough, count);
-
-                // 2. Toppings
                 const toppings = recipeData[type].variants[variant].toppings;
                 addToTotal(totalIngredients, toppings, count);
             }
@@ -455,18 +396,12 @@
 
             if (typeof val === 'number') {
                 totalObj[key].amount += (val * multiplier);
-                // Determine unit
                 if (key.includes('water') || key.includes('oil') || key.includes('ml')) {
                     totalObj[key].unit = translations[currentLang].unit_ml;
-                } else if (key === 'ing_pepperoni' || key === 'ing_munster' && val < 20) {
-                     // Keep vague or assume slices/g depending on implementation
-                     totalObj[key].unit = translations[currentLang].unit_g; 
                 } else {
                     totalObj[key].unit = translations[currentLang].unit_g;
                 }
             } else {
-                // It's a text unit (pinch, leaves) - we can't sum mathematically easily
-                // For this version, we just show the unit name
                 totalObj[key].isSpecial = true;
                 totalObj[key].specialKey = val;
             }
@@ -478,27 +413,23 @@
         tbody.innerHTML = '';
         
         if (Object.keys(totals).length === 0) {
-            tbody.innerHTML = '<tr><td colspan="2" style="text-align:center; color:#999;">Ajoutez des quantités pour voir la liste</td></tr>';
+            tbody.innerHTML = `<tr><td colspan="2" style="text-align:center; color:#999; font-style:italic;">Indiquez un nombre de pizzas/flams...</td></tr>`;
             return;
         }
 
         for (const [key, data] of Object.entries(totals)) {
             const tr = document.createElement('tr');
-            
             const tdName = document.createElement('td');
             tdName.textContent = translations[currentLang][key] || key;
-            
             const tdAmount = document.createElement('td');
             tdAmount.className = 'amount-cell';
             
             if (data.isSpecial) {
                 tdAmount.textContent = translations[currentLang][data.specialKey] || "";
             } else {
-                // Round nicely
                 const rounded = Math.round(data.amount * 10) / 10;
                 tdAmount.textContent = `${rounded} ${data.unit}`;
             }
-            
             tr.appendChild(tdName);
             tr.appendChild(tdAmount);
             tbody.appendChild(tr);
@@ -511,39 +442,47 @@
             if (translations[currentLang][key]) el.textContent = translations[currentLang][key];
         });
         
-        // Update all Selects options inside rows
-        document.querySelectorAll('.recipe-row').forEach((row, index) => {
+        document.querySelectorAll('.recipe-row').forEach((row) => {
             const typeSelect = row.querySelector('.type-select');
-            const savedType = typeSelect.value;
             const savedVariant = row.querySelector('.variant-select').value;
             
             typeSelect.options[0].textContent = translations[currentLang].type_pizza;
             typeSelect.options[1].textContent = translations[currentLang].type_tarte;
             
-            updateRowType(typeSelect, row.id.split('-')[1]); // Refresh variants text
-            row.querySelector('.variant-select').value = savedVariant; // Restore selection
+            updateRowType(typeSelect, row.id.split('-')[1]); 
+            row.querySelector('.variant-select').value = savedVariant; 
         });
-
         calculateTotal();
     }
 
-    // --- INITIALIZATION ---
     langSelect.addEventListener('change', (e) => {
         currentLang = e.target.value;
         updateUILanguage();
     });
 
-    // Create 4 initial rows
-    for (let i = 0; i < 4; i++) {
-        addNewRow();
-    }
-    // Set some default values for demo
-    document.querySelectorAll('.count-input')[0].value = 4; // 4 Pizzas
-    document.querySelectorAll('.count-input')[1].value = 0;
-    document.querySelectorAll('.count-input')[2].value = 0;
-    document.querySelectorAll('.count-input')[3].value = 0;
+    // --- INITIALISATION DES 4 LIGNES ---
+    function init() {
+        // Ligne 0 : Pizza
+        containerRows.insertAdjacentHTML('beforeend', createRowHTML(0, 'pizza'));
+        updateRowType(document.getElementById('row-0').querySelector('.type-select'), 0);
+        document.getElementById('row-0').querySelector('.count-input').value = 4; // Valeur démo
 
-    calculateTotal();
+        // Ligne 1 : Pizza
+        containerRows.insertAdjacentHTML('beforeend', createRowHTML(1, 'pizza'));
+        updateRowType(document.getElementById('row-1').querySelector('.type-select'), 1);
+
+        // Ligne 2 : Tarte
+        containerRows.insertAdjacentHTML('beforeend', createRowHTML(2, 'tarte'));
+        updateRowType(document.getElementById('row-2').querySelector('.type-select'), 2);
+
+        // Ligne 3 : Tarte
+        containerRows.insertAdjacentHTML('beforeend', createRowHTML(3, 'tarte'));
+        updateRowType(document.getElementById('row-3').querySelector('.type-select'), 3);
+        
+        calculateTotal();
+    }
+
+    init();
 
 </script>
 </body>
