@@ -5,26 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Calculateur Pizza & Flammkuchen - Recettes et Quantités Exactes</title>
-    <meta name="description" content="Calculez les ingrédients exacts pour vos pizzas et tartes flambées maison. Adaptez les quantités de pâte et garniture selon le nombre d'invités. Recettes incluses.">
-    <meta name="keywords" content="calculateur pizza, recette pizza, pâte à pizza, tarte flambée, flammkuchen, quantités, cuisine, calculateur ingrédients">
-    <meta name="author" content="Pizza Calculator">
-    <meta name="robots" content="index, follow">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://votre-site-github.io/">
-    <meta property="og:title" content="Calculateur Pizza & Flammkuchen">
-    <meta property="og:description" content="Fini les restes de pâte ! Calculez les quantités exactes de farine, eau et garniture pour vos soirées pizza.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1200&q=80">
-
+    <meta name="description" content="Calculez les ingrédients exacts pour vos pizzas et tartes flambées maison. Adaptez les quantités de pâte et garniture selon le nombre d'invités.">
+    
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         /* --- CSS STYLES --- */
         :root {
-            --bg-color: #FAF3E0; /* Beige papier chaud */
-            --text-color: #2D2420; /* Brun très foncé */
-            --accent-color: #C0392B; /* Rouge brique mat */
-            --secondary-color: #8D6E63; /* Brun terreux */
+            --bg-color: #FAF3E0;
+            --text-color: #2D2420;
+            --accent-color: #C0392B;
+            --secondary-color: #8D6E63;
             --card-bg: #FFFFFF;
             --container-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
@@ -35,15 +26,11 @@
             color: var(--text-color);
             margin: 0;
             padding: 20px;
-            /* Texture papier subtile */
             background-image: linear-gradient(rgba(250, 243, 224, 0.92), rgba(250, 243, 224, 0.92)), url('https://www.transparenttextures.com/patterns/cream-paper.png');
             line-height: 1.6;
         }
 
-        h1, h2, h3 {
-            font-family: 'Merriweather', serif;
-            color: var(--text-color);
-        }
+        h1, h2, h3 { font-family: 'Merriweather', serif; color: var(--text-color); }
 
         .container {
             max-width: 800px;
@@ -55,7 +42,6 @@
             border: 1px solid #EFEBE9;
         }
 
-        /* --- Header --- */
         header {
             display: flex;
             justify-content: space-between;
@@ -75,10 +61,8 @@
             color: #333;
             font-weight: bold;
             cursor: pointer;
-            font-size: 0.9rem;
         }
 
-        /* --- Pub & Images --- */
         .ad-banner-top {
             background-color: #f4f4f4;
             border: 1px dashed #bbb;
@@ -92,14 +76,14 @@
 
         #recipe-image {
             width: 100%;
-            height: 280px;
+            height: 300px; /* Un peu plus haut pour mieux voir */
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 30px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            background-color: #ddd;
         }
 
-        /* --- Contrôles --- */
         .controls-section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -118,7 +102,6 @@
             color: var(--secondary-color);
             text-transform: uppercase;
             font-size: 0.85rem;
-            letter-spacing: 0.5px;
         }
         select, input[type="number"] {
             padding: 12px;
@@ -126,35 +109,18 @@
             border-radius: 4px;
             font-size: 1rem;
             background: #fff;
-            color: #333;
-            transition: border 0.3s;
         }
         select:focus, input:focus { border-color: var(--accent-color); outline: none; }
 
-        /* --- Tableaux --- */
         .results-container { margin-top: 20px; }
         .table-wrapper { margin-bottom: 35px; }
-        h3 { 
-            border-bottom: 1px solid #eee; 
-            padding-bottom: 10px; 
-            margin-top: 0; 
-            color: var(--accent-color);
-        }
+        h3 { border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 0; color: var(--accent-color); }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-        th, td {
-            text-align: left;
-            padding: 14px 10px;
-            border-bottom: 1px solid #f0f0f0;
-        }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { text-align: left; padding: 14px 10px; border-bottom: 1px solid #f0f0f0; }
         th { color: #555; font-family: 'Merriweather', serif; font-size: 0.95rem; }
         td.amount-cell { font-weight: 700; color: #333; text-align: right; }
 
-        /* --- Boutons --- */
         .actions { text-align: center; margin: 40px 0; }
         .btn-print {
             background-color: var(--text-color);
@@ -165,11 +131,10 @@
             border-radius: 50px;
             cursor: pointer;
             font-weight: bold;
-            transition: background-color 0.2s, transform 0.1s;
+            transition: background-color 0.2s;
         }
-        .btn-print:hover { background-color: var(--accent-color); transform: translateY(-2px); }
+        .btn-print:hover { background-color: var(--accent-color); }
 
-        /* --- Affiliation --- */
         .affiliation-section {
             margin-top: 50px;
             padding: 30px;
@@ -181,36 +146,23 @@
             gap: 25px;
             box-shadow: 0 5px 15px rgba(211, 84, 0, 0.1);
         }
-        .aff-content h4 { margin: 0 0 10px 0; font-size: 1.4rem; color: var(--accent-color); }
         .aff-link {
-            display: inline-block;
-            margin-top: 10px;
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: bold;
-            border-bottom: 2px solid var(--text-color);
-            padding-bottom: 2px;
+            display: inline-block; margin-top: 10px; color: var(--text-color);
+            text-decoration: none; font-weight: bold; border-bottom: 2px solid var(--text-color);
         }
-        .aff-link:hover { color: var(--accent-color); border-color: var(--accent-color); }
 
-        /* --- Responsive --- */
         @media (max-width: 600px) {
             .container { padding: 20px; }
             header { flex-direction: column; align-items: flex-start; gap: 15px; }
-            .lang-select { align-self: flex-end; }
             .affiliation-section { flex-direction: column; text-align: center; }
             #recipe-image { height: 200px; }
         }
 
-        /* --- Print --- */
         @media print {
             body { background: none; padding: 0; color: #000; }
             .container { box-shadow: none; border: none; padding: 0; max-width: 100%; }
-            header h1 { font-size: 24pt; color: #000; }
             .ad-banner-top, .affiliation-section, .actions, .lang-select, #recipe-image { display: none !important; }
             .controls-section { border: 1px solid #000; padding: 10px; margin-bottom: 20px; }
-            h3 { color: #000; border-bottom: 1px solid #000; }
-            table, th, td { border-bottom: 1px solid #ccc; color: #000; }
         }
     </style>
 </head>
@@ -245,8 +197,7 @@
 
         <div class="control-group">
             <label for="recipe-variant" data-i18n="lbl_variant">Recette</label>
-            <select id="recipe-variant">
-                </select>
+            <select id="recipe-variant"></select>
         </div>
 
         <div class="control-group">
@@ -260,10 +211,7 @@
             <h3 data-i18n="ui_dough_title">Ingrédients de la Pâte</h3>
             <table>
                 <thead>
-                    <tr>
-                        <th data-i18n="ui_col_ingredient">Ingrédient</th>
-                        <th data-i18n="ui_col_quantity" style="text-align: right;">Quantité</th>
-                    </tr>
+                    <tr><th data-i18n="ui_col_ingredient">Ingrédient</th><th data-i18n="ui_col_quantity" style="text-align: right;">Quantité</th></tr>
                 </thead>
                 <tbody id="dough-tbody"></tbody>
             </table>
@@ -273,10 +221,7 @@
             <h3 data-i18n="ui_toppings_title">Ingrédients de la Garniture</h3>
             <table>
                 <thead>
-                    <tr>
-                        <th data-i18n="ui_col_ingredient">Ingrédient</th>
-                        <th data-i18n="ui_col_quantity" style="text-align: right;">Quantité</th>
-                    </tr>
+                    <tr><th data-i18n="ui_col_ingredient">Ingrédient</th><th data-i18n="ui_col_quantity" style="text-align: right;">Quantité</th></tr>
                 </thead>
                 <tbody id="toppings-tbody"></tbody>
             </table>
@@ -299,263 +244,101 @@
 
 <script>
     /* --- JAVASCRIPT LOGIC --- */
-
-    // 1. Dictionnaire (Titres optimisés et fonctionnels)
     const translations = {
         en: {
-            ui_title: "Perfect Pizza Calculator",
-            lbl_type: "Dish Type",
-            lbl_variant: "Recipe Variant",
-            lbl_guests: "Units / Guests",
-            ui_dough_title: "Dough Ingredients",
-            ui_toppings_title: "Toppings",
-            ui_col_ingredient: "Ingredient",
-            ui_col_quantity: "Quantity",
-            btn_print: "Print Shopping List 🖨️",
-            type_pizza: "🍕 Italian Pizza",
-            type_tarte: "🔥 Flammkuchen (Tarte Flambée)",
-            aff_title: "Want Restaurant Quality?",
-            aff_text: "Standard ovens can't reach 500°C. The secret is a specialized pizza oven.",
-            aff_btn: "Check out Pizza Ovens (Affiliate) >",
-            var_margherita: "Margherita (Classic)",
-            var_reine: "Regina (Ham & Mushroom)",
-            var_pepperoni: "Pepperoni / Spicy",
-            var_4cheese: "Four Cheeses",
-            var_tradition: "Traditional (Bacon/Onion)",
-            var_gratinee: "Gratinée (with Cheese)",
-            var_forestiere: "Forestière (Mushrooms)",
-            var_munster: "Munster Cheese Special",
-            ing_flour: "Bread Flour (Type 00)",
-            ing_water: "Water (Cold)",
-            ing_salt: "Fine Salt",
-            ing_yeast: "Fresh Yeast",
-            ing_oil: "Rapeseed Oil",
-            ing_sauce_tomato: "Tomato Sauce",
-            ing_mozzarella: "Mozzarella Ball",
-            ing_basil: "Fresh Basil",
-            ing_ham: "Cooked Ham",
-            ing_mushrooms: "Fresh Mushrooms",
-            ing_pepperoni: "Pepperoni Slices",
-            ing_gorgonzola: "Gorgonzola",
-            ing_goat: "Goat Cheese",
-            ing_parmesan: "Parmesan",
-            ing_creme_fraiche: "Crème Fraîche",
-            ing_fromage_blanc: "Fromage Blanc / Quark",
-            ing_lardons: "Bacon Strips (Lardons)",
-            ing_onions: "Onions",
-            ing_nutmeg: "Nutmeg",
-            ing_emmental: "Emmental Cheese",
-            ing_munster: "Munster Cheese",
+            ui_title: "Perfect Pizza Calculator", lbl_type: "Dish Type", lbl_variant: "Recipe Variant", lbl_guests: "Units / Guests",
+            ui_dough_title: "Dough Ingredients", ui_toppings_title: "Toppings", ui_col_ingredient: "Ingredient", ui_col_quantity: "Quantity",
+            btn_print: "Print Shopping List 🖨️", type_pizza: "🍕 Italian Pizza", type_tarte: "🔥 Flammkuchen (Tarte Flambée)",
+            aff_title: "Want Restaurant Quality?", aff_text: "Standard ovens can't reach 500°C. The secret is a specialized pizza oven.", aff_btn: "Check out Pizza Ovens (Affiliate) >",
+            var_margherita: "Margherita (Classic)", var_reine: "Regina (Ham & Mushroom)", var_pepperoni: "Pepperoni / Spicy", var_4cheese: "Four Cheeses",
+            var_tradition: "Traditional (Bacon/Onion)", var_gratinee: "Gratinée (with Cheese)", var_forestiere: "Forestière (Mushrooms)", var_munster: "Munster Cheese Special",
+            ing_flour: "Bread Flour (Type 00)", ing_water: "Water (Cold)", ing_salt: "Fine Salt", ing_yeast: "Fresh Yeast", ing_oil: "Rapeseed Oil",
+            ing_sauce_tomato: "Tomato Sauce", ing_mozzarella: "Mozzarella Ball", ing_basil: "Fresh Basil", ing_ham: "Cooked Ham",
+            ing_mushrooms: "Fresh Mushrooms", ing_pepperoni: "Pepperoni Slices", ing_gorgonzola: "Gorgonzola", ing_goat: "Goat Cheese", ing_parmesan: "Parmesan",
+            ing_creme_fraiche: "Crème Fraîche", ing_fromage_blanc: "Fromage Blanc / Quark", ing_lardons: "Bacon Strips (Lardons)", ing_onions: "Onions",
+            ing_nutmeg: "Nutmeg", ing_emmental: "Emmental Cheese", ing_munster: "Munster Cheese",
             unit_g: "g", unit_ml: "ml", unit_some: "leaves", unit_pinch: "pinch", unit_slices: "slices"
         },
         fr: {
-            ui_title: "Calculateur Pizza & Flam's",
-            lbl_type: "Type de Plat",
-            lbl_variant: "Variante de Recette",
-            lbl_guests: "Nombre de Pizzas",
-            ui_dough_title: "Ingrédients Pâte",
-            ui_toppings_title: "Ingrédients Garniture",
-            ui_col_ingredient: "Ingrédient",
-            ui_col_quantity: "Quantité",
-            btn_print: "Imprimer la liste 🖨️",
-            type_pizza: "🍕 Pizza Italienne",
-            type_tarte: "🔥 Tarte Flambée (Alsace)",
-            aff_title: "Cuisson Pro à la Maison ?",
-            aff_text: "Le four domestique ne chauffe pas assez. Pour une pizza comme au restaurant, découvrez les fours spécialisés.",
-            aff_btn: "Voir les Fours à Pizza (Affilié) >",
-            var_margherita: "Margherita (Classique)",
-            var_reine: "Reine (Jambon/Champis)",
-            var_pepperoni: "Pepperoni / Piquante",
-            var_4cheese: "4 Fromages",
-            var_tradition: "Traditionnelle (Lardons)",
-            var_gratinee: "Gratinée (Emmental)",
-            var_forestiere: "Forestière (Champignons)",
-            var_munster: "Au Munster",
-            ing_flour: "Farine (T55/T65 ou T00)",
-            ing_water: "Eau Froide",
-            ing_salt: "Sel Fin",
-            ing_yeast: "Levure Fraîche",
-            ing_oil: "Huile de Colza",
-            ing_sauce_tomato: "Sauce Tomate",
-            ing_mozzarella: "Mozzarella (boule)",
-            ing_basil: "Basilic Frais",
-            ing_ham: "Jambon Cuit",
-            ing_mushrooms: "Champignons Frais",
-            ing_pepperoni: "Tranches Pepperoni/Chorizo",
-            ing_gorgonzola: "Gorgonzola",
-            ing_goat: "Chèvre",
-            ing_parmesan: "Parmesan",
-            ing_creme_fraiche: "Crème Fraîche Epaisse",
-            ing_fromage_blanc: "Fromage Blanc (Bibeleskaes)",
-            ing_lardons: "Lardons Fumés",
-            ing_onions: "Oignons",
-            ing_nutmeg: "Muscade",
-            ing_emmental: "Emmental Râpé",
-            ing_munster: "Munster",
+            ui_title: "Calculateur Pizza & Flam's", lbl_type: "Type de Plat", lbl_variant: "Variante de Recette", lbl_guests: "Nombre de Pizzas",
+            ui_dough_title: "Ingrédients Pâte", ui_toppings_title: "Ingrédients Garniture", ui_col_ingredient: "Ingrédient", ui_col_quantity: "Quantité",
+            btn_print: "Imprimer la liste 🖨️", type_pizza: "🍕 Pizza Italienne", type_tarte: "🔥 Tarte Flambée (Alsace)",
+            aff_title: "Cuisson Pro à la Maison ?", aff_text: "Le four domestique ne chauffe pas assez. Pour une pizza comme au restaurant, découvrez les fours spécialisés.", aff_btn: "Voir les Fours à Pizza (Affilié) >",
+            var_margherita: "Margherita (Classique)", var_reine: "Reine (Jambon/Champis)", var_pepperoni: "Pepperoni / Piquante", var_4cheese: "4 Fromages",
+            var_tradition: "Traditionnelle (Lardons)", var_gratinee: "Gratinée (Emmental)", var_forestiere: "Forestière (Champignons)", var_munster: "Au Munster",
+            ing_flour: "Farine (T55/T65 ou T00)", ing_water: "Eau Froide", ing_salt: "Sel Fin", ing_yeast: "Levure Fraîche", ing_oil: "Huile de Colza",
+            ing_sauce_tomato: "Sauce Tomate", ing_mozzarella: "Mozzarella (boule)", ing_basil: "Basilic Frais", ing_ham: "Jambon Cuit",
+            ing_mushrooms: "Champignons Frais", ing_pepperoni: "Tranches Pepperoni/Chorizo", ing_gorgonzola: "Gorgonzola", ing_goat: "Chèvre", ing_parmesan: "Parmesan",
+            ing_creme_fraiche: "Crème Fraîche Epaisse", ing_fromage_blanc: "Fromage Blanc (Bibeleskaes)", ing_lardons: "Lardons Fumés", ing_onions: "Oignons",
+            ing_nutmeg: "Muscade", ing_emmental: "Emmental Râpé", ing_munster: "Munster",
             unit_g: "g", unit_ml: "ml", unit_some: "feuilles", unit_pinch: "pincée", unit_slices: "tranches"
         },
         de: {
-            ui_title: "Pizza & Flammkuchen Rechner",
-            lbl_type: "Gericht",
-            lbl_variant: "Rezept-Variante",
-            lbl_guests: "Anzahl Pizzen / Personen",
-            ui_dough_title: "Teig Zutaten",
-            ui_toppings_title: "Belag Zutaten",
-            ui_col_ingredient: "Zutat",
-            ui_col_quantity: "Menge",
-            btn_print: "Einkaufsliste drucken 🖨️",
-            type_pizza: "🍕 Italienische Pizza",
-            type_tarte: "🔥 Elsässer Flammkuchen",
-            aff_title: "Wie beim Italiener backen?",
-            aff_text: "Normale Öfen sind zu kalt. Das Geheimnis für knusprigen Boden sind spezielle Pizzaöfen (500°C).",
-            aff_btn: "Pizzaöfen ansehen (Affiliate) >",
-            var_margherita: "Margherita (Klassisch)",
-            var_reine: "Regina (Schinken/Pilze)",
-            var_pepperoni: "Pepperoni / Pikant",
-            var_4cheese: "Vier Käse",
-            var_tradition: "Traditionell (Speck/Zwiebel)",
-            var_gratinee: "Gratinée (mit Käse)",
-            var_forestiere: "Forestière (mit Pilzen)",
-            var_munster: "Munster Spezial",
-            ing_flour: "Mehl (Type 405/550 oder 00)",
-            ing_water: "Wasser (Kalt)",
-            ing_salt: "Salz",
-            ing_yeast: "Frische Hefe",
-            ing_oil: "Rapsöl",
-            ing_sauce_tomato: "Tomatensauce",
-            ing_mozzarella: "Mozzarella",
-            ing_basil: "Frischer Basilikum",
-            ing_ham: "Gekochter Schinken",
-            ing_mushrooms: "Frische Champignons",
-            ing_pepperoni: "Pepperoni-Scheiben",
-            ing_gorgonzola: "Gorgonzola",
-            ing_goat: "Ziegenkäse",
-            ing_parmesan: "Parmesan",
-            ing_creme_fraiche: "Crème Fraîche",
-            ing_fromage_blanc: "Speisequark",
-            ing_lardons: "Speckwürfel",
-            ing_onions: "Zwiebeln",
-            ing_nutmeg: "Muskatnuss",
-            ing_emmental: "Emmentaler (gerieben)",
-            ing_munster: "Munsterkäse",
+            ui_title: "Pizza & Flammkuchen Rechner", lbl_type: "Gericht", lbl_variant: "Rezept-Variante", lbl_guests: "Anzahl Pizzen / Personen",
+            ui_dough_title: "Teig Zutaten", ui_toppings_title: "Belag Zutaten", ui_col_ingredient: "Zutat", ui_col_quantity: "Menge",
+            btn_print: "Einkaufsliste drucken 🖨️", type_pizza: "🍕 Italienische Pizza", type_tarte: "🔥 Elsässer Flammkuchen",
+            aff_title: "Wie beim Italiener backen?", aff_text: "Normale Öfen sind zu kalt. Das Geheimnis für knusprigen Boden sind spezielle Pizzaöfen (500°C).", aff_btn: "Pizzaöfen ansehen (Affiliate) >",
+            var_margherita: "Margherita (Klassisch)", var_reine: "Reine (Schinken & Pilze)", var_pepperoni: "Pepperoni / Pikant", var_4cheese: "Vier Käse",
+            var_tradition: "Traditionell (Speck/Zwiebel)", var_gratinee: "Gratinée (mit Käse)", var_forestiere: "Forestière (mit Pilzen)", var_munster: "Munster Spezial",
+            ing_flour: "Mehl (Type 405/550 oder 00)", ing_water: "Wasser (Kalt)", ing_salt: "Salz", ing_yeast: "Frische Hefe", ing_oil: "Rapsöl",
+            ing_sauce_tomato: "Tomatensauce", ing_mozzarella: "Mozzarella", ing_basil: "Frischer Basilikum", ing_ham: "Gekochter Schinken",
+            ing_mushrooms: "Frische Champignons", ing_pepperoni: "Pepperoni-Scheiben", ing_gorgonzola: "Gorgonzola", ing_goat: "Ziegenkäse", ing_parmesan: "Parmesan",
+            ing_creme_fraiche: "Crème Fraîche", ing_fromage_blanc: "Speisequark", ing_lardons: "Speckwürfel", ing_onions: "Zwiebeln",
+            ing_nutmeg: "Muskatnuss", ing_emmental: "Emmentaler (gerieben)", ing_munster: "Munsterkäse",
             unit_g: "g", unit_ml: "ml", unit_some: "Blätter", unit_pinch: "Prise", unit_slices: "Scheiben"
         },
         it: {
-            ui_title: "Calcolatore Pizza Perfetta",
-            lbl_type: "Tipo di Piatto",
-            lbl_variant: "Variante",
-            lbl_guests: "Numero Pizze",
-            ui_dough_title: "Ingredienti Impasto",
-            ui_toppings_title: "Condimenti",
-            ui_col_ingredient: "Ingrediente",
-            ui_col_quantity: "Quantità",
-            btn_print: "Stampa Lista 🖨️",
-            type_pizza: "🍕 Pizza Italiana",
-            type_tarte: "🔥 Tarte Flambée",
-            aff_title: "Vuoi una cottura perfetta?",
-            aff_text: "I forni di casa non bastano. Scopri i forni specializzati per una pizza come in pizzeria.",
-            aff_btn: "Vedi Forni Pizza (Affiliato) >",
-            var_margherita: "Margherita (Classica)",
-            var_reine: "Regina (Prosciutto/Funghi)",
-            var_pepperoni: "Pepperoni / Piccante",
-            var_4cheese: "Quattro Formaggi",
-            var_tradition: "Tradizionale",
-            var_gratinee: "Gratinée (al Formaggio)",
-            var_forestiere: "Forestière (Funghi)",
-            var_munster: "Al Munster",
-            ing_flour: "Farina (Tipo 00)",
-            ing_water: "Acqua Fredda",
-            ing_salt: "Sale Fino",
-            ing_yeast: "Lievito Fresco",
-            ing_oil: "Olio di Semi",
-            ing_sauce_tomato: "Passata di Pomodoro",
-            ing_mozzarella: "Mozzarella",
-            ing_basil: "Basilico Fresco",
-            ing_ham: "Prosciutto Cotto",
-            ing_mushrooms: "Funghi Freschi",
-            ing_pepperoni: "Salame Piccante",
-            ing_gorgonzola: "Gorgonzola",
-            ing_goat: "Caprino",
-            ing_parmesan: "Parmigiano",
-            ing_creme_fraiche: "Panna Acida (Spessa)",
-            ing_fromage_blanc: "Formaggio Spalmabile",
-            ing_lardons: "Pancetta Affumicata",
-            ing_onions: "Cipolle",
-            ing_nutmeg: "Noce Moscata",
-            ing_emmental: "Emmental",
-            ing_munster: "Munster",
+            ui_title: "Calcolatore Pizza Perfetta", lbl_type: "Tipo di Piatto", lbl_variant: "Variante", lbl_guests: "Numero Pizze",
+            ui_dough_title: "Ingredienti Impasto", ui_toppings_title: "Condimenti", ui_col_ingredient: "Ingrediente", ui_col_quantity: "Quantità",
+            btn_print: "Stampa Lista 🖨️", type_pizza: "🍕 Pizza Italiana", type_tarte: "🔥 Tarte Flambée",
+            aff_title: "Vuoi una cottura perfetta?", aff_text: "I forni di casa non bastano. Scopri i forni specializzati per una pizza come in pizzeria.", aff_btn: "Vedi Forni Pizza (Affiliato) >",
+            var_margherita: "Margherita (Classica)", var_reine: "Reine (Prosciutto/Funghi)", var_pepperoni: "Pepperoni / Piccante", var_4cheese: "Quattro Formaggi",
+            var_tradition: "Tradizionale", var_gratinee: "Gratinée (al Formaggio)", var_forestiere: "Forestière (Funghi)", var_munster: "Al Munster",
+            ing_flour: "Farina (Tipo 00)", ing_water: "Acqua Fredda", ing_salt: "Sale Fino", ing_yeast: "Lievito Fresco", ing_oil: "Olio di Semi",
+            ing_sauce_tomato: "Passata di Pomodoro", ing_mozzarella: "Mozzarella", ing_basil: "Basilico Fresco", ing_ham: "Prosciutto Cotto",
+            ing_mushrooms: "Funghi Freschi", ing_pepperoni: "Salame Piccante", ing_gorgonzola: "Gorgonzola", ing_goat: "Caprino", ing_parmesan: "Parmigiano",
+            ing_creme_fraiche: "Panna Acida (Spessa)", ing_fromage_blanc: "Formaggio Spalmabile", ing_lardons: "Pancetta Affumicata", ing_onions: "Cipolle",
+            ing_nutmeg: "Noce Moscata", ing_emmental: "Emmental", ing_munster: "Munster",
             unit_g: "g", unit_ml: "ml", unit_some: "foglie", unit_pinch: "pizzico", unit_slices: "fette"
         },
         es: {
-            ui_title: "Calculadora Pizza Perfecta",
-            lbl_type: "Tipo de Plato",
-            lbl_variant: "Variante",
-            lbl_guests: "Número de Pizzas",
-            ui_dough_title: "Ingredientes Masa",
-            ui_toppings_title: "Ingredientes Cobertura",
-            ui_col_ingredient: "Ingrediente",
-            ui_col_quantity: "Cantidad",
-            btn_print: "Imprimir Lista 🖨️",
-            type_pizza: "🍕 Pizza Italiana",
-            type_tarte: "🔥 Tarte Flambée",
-            aff_title: "¿Buscas calidad restaurante?",
-            aff_text: "El horno de casa no calienta suficiente. Descubre los hornos de pizza especializados.",
-            aff_btn: "Ver Hornos Pizza (Afiliado) >",
-            var_margherita: "Margherita (Clásica)",
-            var_reine: "Reine (Jamón/Champiñones)",
-            var_pepperoni: "Pepperoni / Picante",
-            var_4cheese: "Cuatro Quesos",
-            var_tradition: "Tradicional",
-            var_gratinee: "Gratinée (con Queso)",
-            var_forestiere: "Forestière (Champiñones)",
-            var_munster: "Al Munster",
-            ing_flour: "Harina de Fuerza",
-            ing_water: "Agua Fría",
-            ing_salt: "Sal Fina",
-            ing_yeast: "Levadura Fresca",
-            ing_oil: "Aceite",
-            ing_sauce_tomato: "Salsa de Tomate",
-            ing_mozzarella: "Mozzarella",
-            ing_basil: "Albahaca Fresca",
-            ing_ham: "Jamón Cocido",
-            ing_mushrooms: "Champiñones Frescos",
-            ing_pepperoni: "Pepperoni",
-            ing_gorgonzola: "Gorgonzola",
-            ing_goat: "Queso de Cabra",
-            ing_parmesan: "Parmesano",
-            ing_creme_fraiche: "Crème Fraîche",
-            ing_fromage_blanc: "Queso Batido",
-            ing_lardons: "Bacon Ahumado",
-            ing_onions: "Cebollas",
-            ing_nutmeg: "Nuez Moscada",
-            ing_emmental: "Emmental",
-            ing_munster: "Munster",
+            ui_title: "Calculadora Pizza Perfecta", lbl_type: "Tipo de Plato", lbl_variant: "Variante", lbl_guests: "Número de Pizzas",
+            ui_dough_title: "Ingredientes Masa", ui_toppings_title: "Ingredientes Cobertura", ui_col_ingredient: "Ingrediente", ui_col_quantity: "Cantidad",
+            btn_print: "Imprimir Lista 🖨️", type_pizza: "🍕 Pizza Italiana", type_tarte: "🔥 Tarte Flambée",
+            aff_title: "¿Buscas calidad restaurante?", aff_text: "El horno de casa no calienta suficiente. Descubre los hornos de pizza especializados.", aff_btn: "Ver Hornos Pizza (Afiliado) >",
+            var_margherita: "Margherita (Clásica)", var_reine: "Reine (Jamón/Champiñones)", var_pepperoni: "Pepperoni / Picante", var_4cheese: "Cuatro Quesos",
+            var_tradition: "Tradicional", var_gratinee: "Gratinée (con Queso)", var_forestiere: "Forestière (Champiñones)", var_munster: "Al Munster",
+            ing_flour: "Harina de Fuerza", ing_water: "Agua Fría", ing_salt: "Sal Fina", ing_yeast: "Levadura Fresca", ing_oil: "Aceite",
+            ing_sauce_tomato: "Salsa de Tomate", ing_mozzarella: "Mozzarella", ing_basil: "Albahaca Fresca", ing_ham: "Jamón Cocido",
+            ing_mushrooms: "Champiñones Frescos", ing_pepperoni: "Pepperoni", ing_gorgonzola: "Gorgonzola", ing_goat: "Queso de Cabra", ing_parmesan: "Parmesano",
+            ing_creme_fraiche: "Crème Fraîche", ing_fromage_blanc: "Queso Batido", ing_lardons: "Bacon Ahumado", ing_onions: "Cebollas",
+            ing_nutmeg: "Nuez Moscada", ing_emmental: "Emmental", ing_munster: "Munster",
             unit_g: "g", unit_ml: "ml", unit_some: "hojas", unit_pinch: "pizca", unit_slices: "lonchas"
         }
     };
 
-    // 2. Data & URL IMAGES FIXES (Unsplash IDs) pour éviter les humains
+    // --- DATA RECETTES AVEC IMAGES CORRIGEES ---
     const recipeData = {
         pizza: {
             dough: { ing_flour: 150, ing_water: 95, ing_salt: 3, ing_yeast: 1 },
             variants: {
                 margherita: {
-                    // Photo de Pizza Margherita (vue de haut, seulement food)
+                    // Pizza Margherita classique (basilic visible)
                     imageUrl: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80",
                     toppings: { ing_sauce_tomato: 80, ing_mozzarella: 100, ing_basil: "unit_some" }
                 },
                 reine: {
-                    // Pizza Jambon Champignons
+                    // Vue claire sur champignons et jambon
                     imageUrl: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80",
                     toppings: { ing_sauce_tomato: 80, ing_mozzarella: 80, ing_ham: 50, ing_mushrooms: 40 }
                 },
                 pepperoni: {
-                    // Pepperoni
+                    // Pepperoni clairement visible
                     imageUrl: "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=800&q=80",
                     toppings: { ing_sauce_tomato: 80, ing_mozzarella: 80, ing_pepperoni: 40 }
                 },
                 fourcheese: {
-                    // Fromages
+                    // Pizza blanche/fromagère
                     imageUrl: "https://images.unsplash.com/photo-1573821663912-6df460f9c684?auto=format&fit=crop&w=800&q=80",
                     toppings: { ing_sauce_tomato: 50, ing_mozzarella: 40, ing_gorgonzola: 30, ing_goat: 30, ing_parmesan: 20 }
                 }
@@ -566,30 +349,29 @@
             baseTopping: { ing_creme_fraiche: 50, ing_fromage_blanc: 50, ing_onions: 50, ing_nutmeg: "unit_pinch" },
             variants: {
                 tradition: {
-                    // Flammkuchen classique
-                    imageUrl: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80", 
+                    // Vraie Flammkuchen rectangulaire (Wikimedia Commons)
+                    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Tarte_flamb%C3%A9e_originale.jpg/800px-Tarte_flamb%C3%A9e_originale.jpg", 
                     toppings: { ...{ing_lardons: 60} } 
                 },
                 gratinee: {
-                    // Version gratinée (ressemble à classique mais plus dorée)
-                    imageUrl: "https://images.unsplash.com/photo-1605478371310-a9f1e96b4ff4?auto=format&fit=crop&w=800&q=80",
+                    // Flammkuchen gratinée
+                    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Flammekueche_gratin%C3%A9e.jpg/800px-Flammekueche_gratin%C3%A9e.jpg",
                     toppings: { ...{ing_lardons: 60, ing_emmental: 40} }
                 },
                 forestiere: {
-                    // Champignons
-                    imageUrl: "https://images.unsplash.com/photo-1595295333158-4742f28fbd85?auto=format&fit=crop&w=800&q=80",
+                    // Champignons sur flammkuchen
+                    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Tarte_flamb%C3%A9e_foresti%C3%A8re.JPG/800px-Tarte_flamb%C3%A9e_foresti%C3%A8re.JPG",
                     toppings: { ...{ing_lardons: 60, ing_mushrooms: 40} }
                 },
                 munster: {
-                    // Fromage fort
-                    imageUrl: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80",
+                    // Au Munster (visuel fromage fort)
+                    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Flammekueche_munster.jpg/800px-Flammekueche_munster.jpg",
                     toppings: { ...{ing_lardons: 60, ing_munster: 50} }
                 }
             }
         }
     };
 
-    // Pré-fusion garnitures
     for (const variantKey in recipeData.tarte.variants) {
         recipeData.tarte.variants[variantKey].toppings = { 
             ...recipeData.tarte.baseTopping, 
@@ -597,7 +379,6 @@
         };
     }
 
-    // 3. Références DOM
     const langSelect = document.getElementById('language-select');
     const typeSelect = document.getElementById('recipe-type');
     const variantSelect = document.getElementById('recipe-variant');
@@ -606,12 +387,10 @@
     const toppingsTbody = document.getElementById('toppings-tbody');
     const recipeImage = document.getElementById('recipe-image');
 
-    // 4. State
     let currentLang = 'fr';
     let currentType = 'pizza';
     let currentVariant = 'margherita';
 
-    // 5. Fonctions
     function updateUILanguage() {
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
@@ -619,19 +398,15 @@
                 el.textContent = translations[currentLang][key];
             }
         });
-
-        // Update Select Inputs
         const typeOpts = typeSelect.options;
         typeOpts[0].textContent = translations[currentLang].type_pizza;
         typeOpts[1].textContent = translations[currentLang].type_tarte;
-        
         updateVariantOptions();
     }
 
     function updateVariantOptions() {
         variantSelect.innerHTML = '';
         const variants = recipeData[currentType].variants;
-        
         for (const [key, details] of Object.entries(variants)) {
             const opt = document.createElement('option');
             opt.value = key;
@@ -639,7 +414,6 @@
             opt.textContent = translations[currentLang][transKey] || key;
             variantSelect.appendChild(opt);
         }
-        
         variantSelect.selectedIndex = 0;
         currentVariant = variantSelect.value;
         updateImage();
@@ -647,7 +421,6 @@
     }
 
     function updateImage() {
-        // Utilisation de l'URL fixe définie dans l'objet
         const imgUrl = recipeData[currentType].variants[currentVariant].imageUrl;
         recipeImage.src = imgUrl;
     }
@@ -655,69 +428,44 @@
     function calculate() {
         const guests = parseInt(guestInput.value) || 0;
         if (guests < 1) return;
-
         const doughRecipe = recipeData[currentType].dough;
         renderTable(doughTbody, doughRecipe, guests);
-
         const toppingRecipe = recipeData[currentType].variants[currentVariant].toppings;
         renderTable(toppingsTbody, toppingRecipe, guests);
     }
 
     function renderTable(tbodyElement, ingredientsObj, multiplier) {
         tbodyElement.innerHTML = '';
-        
         for (const [ingKey, amountBase] of Object.entries(ingredientsObj)) {
             const row = document.createElement('tr');
-            
             const cellName = document.createElement('td');
             cellName.textContent = translations[currentLang][ingKey] || ingKey;
-            
             const cellAmount = document.createElement('td');
             cellAmount.className = 'amount-cell';
             
             if (typeof amountBase === 'number') {
                 let total = amountBase * multiplier;
-                // Arrondir pour éviter les décimales moches (ex: 15.000001)
                 total = Math.round(total * 10) / 10;
-
                 let unit = translations[currentLang].unit_g;
                 if (ingKey === 'ing_water' || ingKey === 'ing_oil' || ingKey.includes('ml')) {
                     unit = translations[currentLang].unit_ml;
                 }
-                
                 cellAmount.textContent = `${total} ${unit}`;
             } else {
                 const unitKey = amountBase;
                 cellAmount.textContent = translations[currentLang][unitKey] || "";
             }
-            
             row.appendChild(cellName);
             row.appendChild(cellAmount);
             tbodyElement.appendChild(row);
         }
     }
 
-    // 6. Listeners
-    langSelect.addEventListener('change', (e) => {
-        currentLang = e.target.value;
-        updateUILanguage();
-        calculate();
-    });
-
-    typeSelect.addEventListener('change', (e) => {
-        currentType = e.target.value;
-        updateVariantOptions(); 
-    });
-
-    variantSelect.addEventListener('change', (e) => {
-        currentVariant = e.target.value;
-        updateImage();
-        calculate();
-    });
-
+    langSelect.addEventListener('change', (e) => { currentLang = e.target.value; updateUILanguage(); calculate(); });
+    typeSelect.addEventListener('change', (e) => { currentType = e.target.value; updateVariantOptions(); });
+    variantSelect.addEventListener('change', (e) => { currentVariant = e.target.value; updateImage(); calculate(); });
     guestInput.addEventListener('input', calculate);
 
-    // 7. Init
     updateVariantOptions();
     updateUILanguage();
     calculate();
